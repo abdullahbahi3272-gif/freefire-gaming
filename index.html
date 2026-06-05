@@ -87,10 +87,42 @@
             alert("Aaj ka Free Fire Redeem Code hai: FF9M-2GF1-NU71 🎁");
         }
     </script>
-        <!-- Final Fixed Right-Side Visitor Counter -->
-<div style="position: fixed; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.9); padding: 10px 15px; border-radius: 8px; border: 2px solid #ff4500; box-shadow: 0 0 10px #ff4500; z-index: 9999; text-align: center;">
-    <p style="margin: 0 0 5px 0; font-size: 11px; color: #fff; font-family: Arial, sans-serif; font-weight: bold; letter-spacing: 1px;">VISITORS 👁️</p>
-    <img src="https://profile-counter.glitch.me/abdullahbahi3272-freefire/count.svg" alt="Live Counter" style="height: 22px;">
-</div>
+    <!-- Final Fixed Right-Side Visitor Counter (Firebase Powered) -->
+<div style="position: fixed; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.9); padding: 10px 15px; border-radius: 8px; border: 2px solid #ff4500; box-shadow: 0 0 10px #ff4500; z-index: 9999; text-align: center; color: #fff; font-family: Arial, sans-serif; font-weight: bold; font-size: 14px;">
+        <span style="font-size: 12px; letter-spacing: 1px;">VISITORS 👁️</span><br>
+        <span id="visitor_counter_num" style="color: #ff4500; font-size: 20px;">000000</span>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+    <script>
+        // Aapka personal Firebase config code
+        const firebaseConfig = {
+            apiKey: "AIzaSyCBi4ZOTpdBmK7a6CEegq4Cv2",
+            authDomain: "freefire-counter.firebaseapp.com",
+            databaseURL: "https://freefire-counter-default-rtdb.firebaseio.com/",
+            projectId: "freefire-counter",
+            storageBucket: "freefire-counter.appspot.com",
+            messagingSenderId: "108594020917",
+            appId: "1:108594020917:web:0925a4ef45e"
+        };
+
+        // Firebase ko shuru karna
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        const counterRef = database.ref('visitor_count');
+
+        // Clicks ginnay ka logic
+        counterRef.transaction(function(currentCount) {
+            return (currentCount || 0) + 1;
+        }, function(error, committed, snapshot) {
+            if (committed) {
+                let count = snapshot.val();
+                let formattedCount = String(count).padStart(6, '0');
+                document.getElementById('visitor_counter_num').textContent = formattedCount;
+            }
+        });
+    </script>
 </body>
 </html>
