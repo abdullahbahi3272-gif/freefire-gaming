@@ -87,10 +87,21 @@
             alert("Aaj ka Free Fire Redeem Code hai: FF9M-2GF1-NU71 🎁");
         }
     </script>
-<!-- Fixed Right-Side Visitor Counter -->
-<div style="position: fixed; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.85); padding: 10px 15px; border-radius: 8px; border: 2px solid #ff4500; box-shadow: 0 0 10px #ff4500; z-index: 9999; text-align: center;">
-    <p style="margin: 0 0 5px 0; font-size: 12px; color: #fff; font-family: Arial, sans-serif; font-weight: bold; letter-spacing: 1px;">VISITORS 👁️</p>
-    <img src="https://cb.viralgandhi.com/c.php?d=abdullahbahi3272-gif&s=fire" alt="Live Counter" style="height: 25px;">
+        <!-- Fixed Right-Side Visitor Counter (FIXED CODE) -->
+<div style="position: fixed; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.85); padding: 10px 15px; border-radius: 8px; border: 2px solid #ff4500; box-shadow: 0 0 10px #ff4500; z-index: 9999; text-align: center; color: #fff; font-family: Arial, sans-serif; font-weight: bold; font-size: 14px;">
+  <span style="font-size: 12px; letter-spacing: 1px;">VISITORS 👁️</span><br>
+  <!-- Main Counter Number -->
+  <span id="visitor_counter_num" style="color: #ff4500; font-size: 20px;">000000</span>
 </div>
+
+<!-- SCRIPT FOR THE COUNTER -->
+<script type="text/javascript">
+  var counter_url = "https://viralgandhi.com/c.php?d=abdullahbahi3272-gif&s=fire&c=1";
+  fetch(counter_url)
+    .then(response => response.text())
+    .then(count => {
+      document.getElementById('visitor_counter_num').textContent = count;
+    });
+</script>
 </body>
 </html>
