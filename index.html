@@ -93,14 +93,18 @@
   <!-- Main Counter Number -->
   <span id="visitor_counter_num" style="color: #ff4500; font-size: 20px;">000000</span>
 </div>
-
-<!-- SCRIPT FOR THE COUNTER -->
+<!-- SCRIPT FOR THE COUNTER (UPDATED & FAST) -->
 <script type="text/javascript">
-  var counter_url = "https://viralgandhi.com/c.php?d=abdullahbahi3272-gif&s=fire&c=1";
+  var counter_url = "https://hits.securicons.xyz/hc/abdullahbahi3272-gif/freefire-gaming";
   fetch(counter_url)
-    .then(response => response.text())
-    .then(count => {
-      document.getElementById('visitor_counter_num').textContent = count;
+    .then(response => response.json())
+    .then(data => {
+      // Yeh line ginti ko 6 digits mein dikhaye gi (jaise 000005)
+      var formattedCount = String(data.hits).padStart(6, '0');
+      document.getElementById('visitor_counter_num').textContent = formattedCount;
+    })
+    .catch(err => {
+      console.log("Counter error: ", err);
     });
 </script>
 </body>
