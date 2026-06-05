@@ -24,6 +24,22 @@
     background-color: #ff4500;
     box-shadow: 0 0 10px #ff4500;
 }
+/* Mobile ke liye responsive settings */
+@media (max-width: 600px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .menu-btn {
+        display: block;
+        width: 80%;
+        text-align: center;
+        margin: 0;
+    }
+}
         body {
             /* Yahan humne photo ko poore background par set kiya hai */
             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('gaming-pic.jpg');
@@ -88,7 +104,7 @@
         }
     </script>
     <!-- Final Fixed Right-Side Visitor Counter (Firebase Powered) -->
-<div style="position: fixed; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.9); padding: 10px 15px; border-radius: 8px; border: 2px solid #ff4500; box-shadow: 0 0 10px #ff4500; z-index: 9999; text-align: center; color: #fff; font-family: Arial, sans-serif; font-weight: bold; font-size: 14px;">
+<div style="position: fixed; bottom: 15px; right: 20px; background: rgba(0, 0, 0, 0.9); padding: 10px 15px; border-radius: 8px; border: 2px solid #ff4500; box-shadow: 0 0 10px #ff4500; z-index: 9999; text-align: center; color: #fff; font-family: Arial, sans-serif; font-weight: bold; font-size: 14px;">
         <span style="font-size: 12px; letter-spacing: 1px;">VISITORS 👁️</span><br>
         <span id="visitor_counter_num" style="color: #ff4500; font-size: 20px;">000000</span>
     </div>
