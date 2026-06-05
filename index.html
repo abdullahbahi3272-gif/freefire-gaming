@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Gaming Zone</title>
+    <style>
+        .menu {
+    margin-bottom: 30px;
+}
+.menu-btn {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(255, 69, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ff4500;
+    transition: 0.3s;
+}
+.menu-btn:hover {
+    background-color: #ff4500;
+    box-shadow: 0 0 10px #ff4500;
+}
+        body {
+            /* Yahan humne photo ko poore background par set kiya hai */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('gaming-pic.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 100px 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: #ff4500;
+            font-size: 50px;
+            text-shadow: 2px 2px 4px #000000; /* Text ke peeche shadow taki saaf nazar aaye */
+        }
+        p {
+            font-size: 20px;
+            text-shadow: 1px 1px 3px #000000;
+            max-width: 600px;
+        }
+        .btn {
+            background-color: #ff4500;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0px 4px 15px rgba(255, 69, 0, 0.4);
+        }
+        .btn:hover {
+            background-color: #e03e00;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <a href="index.html" class="menu-btn">Home</a>
+    <a href="codes.html" class="menu-btn">Redeem Codes</a>
+    <a href="tips.html" class="menu-btn">Tips & Tricks</a>
+</div>
+    <h1>Welcome to Free Fire Gaming Zone! 🔥</h1>
+    
+    <p>Here you will find the latest Free Fire updates, tips, and daily redeem codes.</p>
+
+    <button class="btn" onclick="showCode()">Show today's redeem code</button>
+
+    <script>
+        function showCode() {
+            alert("Aaj ka Free Fire Redeem Code hai: FF9M-2GF1-NU71 🎁");
+        }
+    </script>
+
+</body>
+</html>
